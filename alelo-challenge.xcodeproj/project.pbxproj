@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE0742C02B1F58C40039CF68 /* Viewcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742BF2B1F58C40039CF68 /* Viewcode.swift */; };
+		DE0742C22B1F58D20039CF68 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742C12B1F58D20039CF68 /* Coordinator.swift */; };
 		DE2923112B1A518400B1D633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923102B1A518400B1D633 /* AppDelegate.swift */; };
 		DE2923132B1A518400B1D633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923122B1A518400B1D633 /* SceneDelegate.swift */; };
 		DE2923152B1A518400B1D633 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923142B1A518400B1D633 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE0742BF2B1F58C40039CF68 /* Viewcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewcode.swift; sourceTree = "<group>"; };
+		DE0742C12B1F58D20039CF68 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DE29230D2B1A518400B1D633 /* alelo-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alelo-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2923102B1A518400B1D633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE2923122B1A518400B1D633 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE0742BE2B1F58B10039CF68 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DE0742BF2B1F58C40039CF68 /* Viewcode.swift */,
+				DE0742C12B1F58D20039CF68 /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		DE2923042B1A518400B1D633 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +110,7 @@
 		DE29230F2B1A518400B1D633 /* alelo-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				DE0742BE2B1F58B10039CF68 /* Protocols */,
 				DE2923442B1A51FD00B1D633 /* Resources */,
 				DE2923432B1A51C200B1D633 /* SystemDelegates */,
 				DE2923142B1A518400B1D633 /* ViewController.swift */,
@@ -271,8 +285,10 @@
 			files = (
 				DE2923152B1A518400B1D633 /* ViewController.swift in Sources */,
 				DE2923112B1A518400B1D633 /* AppDelegate.swift in Sources */,
+				DE0742C22B1F58D20039CF68 /* Coordinator.swift in Sources */,
 				DE2923132B1A518400B1D633 /* SceneDelegate.swift in Sources */,
 				DE29231B2B1A518400B1D633 /* alelo_challenge.xcdatamodeld in Sources */,
+				DE0742C02B1F58C40039CF68 /* Viewcode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
