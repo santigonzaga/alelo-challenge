@@ -1,5 +1,5 @@
 # alelo-challenge
 
-MVVM-C
-Unit Testing
+MVVM-C,
+Unit Testing,
 Snapshot Testing
