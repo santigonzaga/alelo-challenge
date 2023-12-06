@@ -51,7 +51,7 @@ class ProductTableViewCell: UITableViewCell {
     private lazy var labelStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 8
+        stackView.spacing = 4
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         return stackView
@@ -76,19 +76,10 @@ class ProductTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var oldPriceLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.font = .systemFont(ofSize: 14)
-        label.adjustsFontForContentSizeCategory = true
-        
-        return label
-    }()
-    
     private lazy var discountPriceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .green
-        label.font = .systemFont(ofSize: 22)
+        label.font = .systemFont(ofSize: 20)
         label.adjustsFontForContentSizeCategory = true
         
         return label
@@ -132,9 +123,9 @@ class ProductTableViewCell: UITableViewCell {
         
         nameLabel.text = product.name
         newPriceLabel.text = product.actual_price
-        
+
         if product.on_sale {
-            oldPriceLabel.text = product.regular_price
+            newPriceLabel.text = "\(product.actual_price) (era \(product.regular_price))"
             discountPriceLabel.text = product.discount_percentage
         }
         
@@ -157,7 +148,6 @@ class ProductTableViewCell: UITableViewCell {
         imageStackView.addArrangedSubview(labelStackView)
         labelStackView.addArrangedSubview(nameLabel)
         labelStackView.addArrangedSubview(newPriceLabel)
-        labelStackView.addArrangedSubview(oldPriceLabel)
         labelStackView.addArrangedSubview(discountPriceLabel)
         buttonStackView.addArrangedSubview(sizeSegmentedControl)
         buttonStackView.addArrangedSubview(addToCartButton)
@@ -172,8 +162,8 @@ class ProductTableViewCell: UITableViewCell {
         ]
         
         let productImageViewConstraints = [
-            productImageView.heightAnchor.constraint(equalToConstant: 60),
-            productImageView.widthAnchor.constraint(equalToConstant: 60),
+            productImageView.heightAnchor.constraint(equalToConstant: 80),
+            productImageView.widthAnchor.constraint(equalToConstant: 80),
         ]
         
         NSLayoutConstraint.activate(mainStackViewConstraints)

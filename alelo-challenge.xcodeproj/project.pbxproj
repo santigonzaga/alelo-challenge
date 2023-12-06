@@ -17,11 +17,13 @@
 		DE0742D32B20212F0039CF68 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742D22B20212F0039CF68 /* ProductTableViewCell.swift */; };
 		DE0742D62B2031610039CF68 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DE0742D52B2031610039CF68 /* Kingfisher */; };
 		DE0742D82B20B5FD0039CF68 /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742D72B20B5FD0039CF68 /* CartItem.swift */; };
+		DE0742DB2B20B93D0039CF68 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742DA2B20B93D0039CF68 /* StringExtensions.swift */; };
+		DE0742DE2B20BC350039CF68 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742DD2B20BC340039CF68 /* MainViewModelTests.swift */; };
+		DE0742E02B20BC670039CF68 /* JsonServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742DF2B20BC670039CF68 /* JsonServiceMock.swift */; };
 		DE2923112B1A518400B1D633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923102B1A518400B1D633 /* AppDelegate.swift */; };
 		DE2923132B1A518400B1D633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923122B1A518400B1D633 /* SceneDelegate.swift */; };
 		DE2923152B1A518400B1D633 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923142B1A518400B1D633 /* MainViewController.swift */; };
 		DE29231D2B1A518600B1D633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE29231C2B1A518600B1D633 /* Assets.xcassets */; };
-		DE29232B2B1A518700B1D633 /* alelo_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE29232A2B1A518700B1D633 /* alelo_challengeTests.swift */; };
 		DE2923352B1A518700B1D633 /* alelo_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923342B1A518700B1D633 /* alelo_challengeUITests.swift */; };
 		DE2923372B1A518700B1D633 /* alelo_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923362B1A518700B1D633 /* alelo_challengeUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,9 @@
 		DE0742CF2B1F8E0F0039CF68 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		DE0742D22B20212F0039CF68 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		DE0742D72B20B5FD0039CF68 /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		DE0742DA2B20B93D0039CF68 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		DE0742DD2B20BC340039CF68 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		DE0742DF2B20BC670039CF68 /* JsonServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonServiceMock.swift; sourceTree = "<group>"; };
 		DE29230D2B1A518400B1D633 /* alelo-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alelo-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2923102B1A518400B1D633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE2923122B1A518400B1D633 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +65,6 @@
 		DE29231C2B1A518600B1D633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE2923212B1A518600B1D633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE2923262B1A518700B1D633 /* alelo-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "alelo-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE29232A2B1A518700B1D633 /* alelo_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alelo_challengeTests.swift; sourceTree = "<group>"; };
 		DE2923302B1A518700B1D633 /* alelo-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "alelo-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2923342B1A518700B1D633 /* alelo_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alelo_challengeUITests.swift; sourceTree = "<group>"; };
 		DE2923362B1A518700B1D633 /* alelo_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alelo_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -144,6 +148,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DE0742D92B20B9300039CF68 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE0742DA2B20B93D0039CF68 /* StringExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE0742DC2B20BC200039CF68 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DE0742DF2B20BC670039CF68 /* JsonServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		DE2923042B1A518400B1D633 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +187,7 @@
 		DE29230F2B1A518400B1D633 /* alelo-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				DE0742D92B20B9300039CF68 /* Extensions */,
 				DE0742D12B20210B0039CF68 /* Views */,
 				DE0742CC2B1F8C1A0039CF68 /* Services */,
 				DE0742C92B1F5E0D0039CF68 /* Models */,
@@ -182,7 +203,8 @@
 		DE2923292B1A518700B1D633 /* alelo-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				DE29232A2B1A518700B1D633 /* alelo_challengeTests.swift */,
+				DE0742DC2B20BC200039CF68 /* Mocks */,
+				DE0742DD2B20BC340039CF68 /* MainViewModelTests.swift */,
 			);
 			path = "alelo-challengeTests";
 			sourceTree = "<group>";
@@ -350,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0742DB2B20B93D0039CF68 /* StringExtensions.swift in Sources */,
 				DE2923152B1A518400B1D633 /* MainViewController.swift in Sources */,
 				DE0742CB2B1F5E1D0039CF68 /* Product.swift in Sources */,
 				DE0742D82B20B5FD0039CF68 /* CartItem.swift in Sources */,
@@ -368,7 +391,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE29232B2B1A518700B1D633 /* alelo_challengeTests.swift in Sources */,
+				DE0742DE2B20BC350039CF68 /* MainViewModelTests.swift in Sources */,
+				DE0742E02B20BC670039CF68 /* JsonServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

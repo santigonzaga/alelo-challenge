@@ -41,17 +41,3 @@ class MainViewModel: MainViewModelProtocol {
         return cart.firstIndex { $0.productName == product.name }
     }
 }
-
-extension String {
-    func convertToDouble() -> Double {
-        let formatter = NumberFormatter()
-        formatter.locale = Locale(identifier: "en_US") // Set the locale to handle the currency format
-        
-        // Remove non-numeric characters and convert to a double
-        if let number = formatter.number(from: self.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)) {
-            return Double(truncating: number)
-        }
-        
-        return 0.0
-    }
-}
