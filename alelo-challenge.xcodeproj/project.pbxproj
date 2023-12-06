@@ -10,6 +10,10 @@
 		DE0742C02B1F58C40039CF68 /* Viewcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742BF2B1F58C40039CF68 /* Viewcode.swift */; };
 		DE0742C22B1F58D20039CF68 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742C12B1F58D20039CF68 /* Coordinator.swift */; };
 		DE0742C62B1F5A9D0039CF68 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742C52B1F5A9D0039CF68 /* MainCoordinator.swift */; };
+		DE0742C82B1F5DC10039CF68 /* alelo.json in Resources */ = {isa = PBXBuildFile; fileRef = DE0742C72B1F5DC10039CF68 /* alelo.json */; };
+		DE0742CB2B1F5E1D0039CF68 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742CA2B1F5E1D0039CF68 /* Product.swift */; };
+		DE0742CE2B1F8C2B0039CF68 /* JsonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742CD2B1F8C2B0039CF68 /* JsonService.swift */; };
+		DE0742D02B1F8E0F0039CF68 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742CF2B1F8E0F0039CF68 /* MainViewModel.swift */; };
 		DE2923112B1A518400B1D633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923102B1A518400B1D633 /* AppDelegate.swift */; };
 		DE2923132B1A518400B1D633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923122B1A518400B1D633 /* SceneDelegate.swift */; };
 		DE2923152B1A518400B1D633 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923142B1A518400B1D633 /* MainViewController.swift */; };
@@ -41,6 +45,10 @@
 		DE0742BF2B1F58C40039CF68 /* Viewcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewcode.swift; sourceTree = "<group>"; };
 		DE0742C12B1F58D20039CF68 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DE0742C52B1F5A9D0039CF68 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		DE0742C72B1F5DC10039CF68 /* alelo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = alelo.json; sourceTree = "<group>"; };
+		DE0742CA2B1F5E1D0039CF68 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		DE0742CD2B1F8C2B0039CF68 /* JsonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonService.swift; sourceTree = "<group>"; };
+		DE0742CF2B1F8E0F0039CF68 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		DE29230D2B1A518400B1D633 /* alelo-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alelo-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2923102B1A518400B1D633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE2923122B1A518400B1D633 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,8 +110,25 @@
 			children = (
 				DE2923142B1A518400B1D633 /* MainViewController.swift */,
 				DE0742C52B1F5A9D0039CF68 /* MainCoordinator.swift */,
+				DE0742CF2B1F8E0F0039CF68 /* MainViewModel.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		DE0742C92B1F5E0D0039CF68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE0742CA2B1F5E1D0039CF68 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE0742CC2B1F8C1A0039CF68 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DE0742CD2B1F8C2B0039CF68 /* JsonService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		DE2923042B1A518400B1D633 = {
@@ -129,6 +154,8 @@
 		DE29230F2B1A518400B1D633 /* alelo-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				DE0742CC2B1F8C1A0039CF68 /* Services */,
+				DE0742C92B1F5E0D0039CF68 /* Models */,
 				DE0742C32B1F59C70039CF68 /* Scenes */,
 				DE0742BE2B1F58B10039CF68 /* Protocols */,
 				DE2923442B1A51FD00B1D633 /* Resources */,
@@ -168,6 +195,7 @@
 		DE2923442B1A51FD00B1D633 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE0742C72B1F5DC10039CF68 /* alelo.json */,
 				DE29231C2B1A518600B1D633 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -278,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE29231D2B1A518600B1D633 /* Assets.xcassets in Resources */,
+				DE0742C82B1F5DC10039CF68 /* alelo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,12 +332,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE2923152B1A518400B1D633 /* MainViewController.swift in Sources */,
+				DE0742CB2B1F5E1D0039CF68 /* Product.swift in Sources */,
 				DE0742C62B1F5A9D0039CF68 /* MainCoordinator.swift in Sources */,
 				DE2923112B1A518400B1D633 /* AppDelegate.swift in Sources */,
 				DE0742C22B1F58D20039CF68 /* Coordinator.swift in Sources */,
+				DE0742D02B1F8E0F0039CF68 /* MainViewModel.swift in Sources */,
 				DE2923132B1A518400B1D633 /* SceneDelegate.swift in Sources */,
 				DE29231B2B1A518400B1D633 /* alelo_challenge.xcdatamodeld in Sources */,
 				DE0742C02B1F58C40039CF68 /* Viewcode.swift in Sources */,
+				DE0742CE2B1F8C2B0039CF68 /* JsonService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
