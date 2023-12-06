@@ -9,8 +9,9 @@ class MainCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = MainViewController()
-        vc.coordinator = self 
+        // TODO: improve this
+        let vc = MainViewController(viewModel: MainViewModel(loadService: JsonService()))
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
 }

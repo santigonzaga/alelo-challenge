@@ -14,6 +14,8 @@
 		DE0742CB2B1F5E1D0039CF68 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742CA2B1F5E1D0039CF68 /* Product.swift */; };
 		DE0742CE2B1F8C2B0039CF68 /* JsonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742CD2B1F8C2B0039CF68 /* JsonService.swift */; };
 		DE0742D02B1F8E0F0039CF68 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742CF2B1F8E0F0039CF68 /* MainViewModel.swift */; };
+		DE0742D32B20212F0039CF68 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742D22B20212F0039CF68 /* ProductTableViewCell.swift */; };
+		DE0742D62B2031610039CF68 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DE0742D52B2031610039CF68 /* Kingfisher */; };
 		DE2923112B1A518400B1D633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923102B1A518400B1D633 /* AppDelegate.swift */; };
 		DE2923132B1A518400B1D633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923122B1A518400B1D633 /* SceneDelegate.swift */; };
 		DE2923152B1A518400B1D633 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923142B1A518400B1D633 /* MainViewController.swift */; };
@@ -49,6 +51,7 @@
 		DE0742CA2B1F5E1D0039CF68 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		DE0742CD2B1F8C2B0039CF68 /* JsonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonService.swift; sourceTree = "<group>"; };
 		DE0742CF2B1F8E0F0039CF68 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		DE0742D22B20212F0039CF68 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		DE29230D2B1A518400B1D633 /* alelo-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alelo-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2923102B1A518400B1D633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE2923122B1A518400B1D633 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE0742D62B2031610039CF68 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +135,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		DE0742D12B20210B0039CF68 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE0742D22B20212F0039CF68 /* ProductTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DE2923042B1A518400B1D633 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +166,7 @@
 		DE29230F2B1A518400B1D633 /* alelo-challenge */ = {
 			isa = PBXGroup;
 			children = (
+				DE0742D12B20210B0039CF68 /* Views */,
 				DE0742CC2B1F8C1A0039CF68 /* Services */,
 				DE0742C92B1F5E0D0039CF68 /* Models */,
 				DE0742C32B1F59C70039CF68 /* Scenes */,
@@ -217,6 +230,9 @@
 			dependencies = (
 			);
 			name = "alelo-challenge";
+			packageProductDependencies = (
+				DE0742D52B2031610039CF68 /* Kingfisher */,
+			);
 			productName = "alelo-challenge";
 			productReference = DE29230D2B1A518400B1D633 /* alelo-challenge.app */;
 			productType = "com.apple.product-type.application";
@@ -289,6 +305,9 @@
 				Base,
 			);
 			mainGroup = DE2923042B1A518400B1D633;
+			packageReferences = (
+				DE0742D42B2031610039CF68 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = DE29230E2B1A518400B1D633 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -338,6 +357,7 @@
 				DE0742C22B1F58D20039CF68 /* Coordinator.swift in Sources */,
 				DE0742D02B1F8E0F0039CF68 /* MainViewModel.swift in Sources */,
 				DE2923132B1A518400B1D633 /* SceneDelegate.swift in Sources */,
+				DE0742D32B20212F0039CF68 /* ProductTableViewCell.swift in Sources */,
 				DE29231B2B1A518400B1D633 /* alelo_challenge.xcdatamodeld in Sources */,
 				DE0742C02B1F58C40039CF68 /* Viewcode.swift in Sources */,
 				DE0742CE2B1F8C2B0039CF68 /* JsonService.swift in Sources */,
@@ -666,6 +686,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE0742D42B2031610039CF68 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE0742D52B2031610039CF68 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE0742D42B2031610039CF68 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		DE2923192B1A518400B1D633 /* alelo_challenge.xcdatamodeld */ = {
