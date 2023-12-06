@@ -2,7 +2,7 @@
 //  alelo_challengeUITestsLaunchTests.swift
 //  alelo-challengeUITests
 //
-//  Created by Santiago del Castillo Gonzaga on 01/12/23.
+//  Created by Santiago del Castillo Gonzaga on 06/12/23.
 //
 
 import XCTest

@@ -3,9 +3,9 @@ import UIKit
 class MainViewController: UIViewController {
     
     weak var coordinator: MainCoordinator?
-    private var viewModel: MainViewModel = MainViewModel(loadService: JsonService())
+    private var viewModel: MainViewModelProtocol
     
-    init(viewModel: MainViewModel) {
+    init(viewModel: MainViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

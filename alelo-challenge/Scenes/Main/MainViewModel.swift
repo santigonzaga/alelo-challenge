@@ -1,6 +1,8 @@
 import Foundation
 
 protocol MainViewModelProtocol {
+    var products: [Product] { get set }
+    
     func loadData()
     func addProductToCart(product: Product)
 }
