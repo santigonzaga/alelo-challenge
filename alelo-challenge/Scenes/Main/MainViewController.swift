@@ -7,7 +7,6 @@ class MainViewController: UIViewController {
     
     init(viewModel: MainViewModel) {
         self.viewModel = viewModel
-        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -17,21 +16,54 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .blue
         
         viewModel.loadData()
+        
+        productsTableView.dataSource = self
+        
+        setupUI()
     }
-
-
+    
+    private lazy var productsTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(ProductTableViewCell.self, forCellReuseIdentifier: ProductTableViewCell.identifier)
+        tableView.separatorStyle = .none
+        tableView.allowsMultipleSelection = false
+        tableView.showsVerticalScrollIndicator = false
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return tableView
+    }()
 }
 
-//extension MainViewController: Viewcode {
-//    func configureSubViews() {
-//        <#code#>
-//    }
-//    
-//    func configureConstraints() {
-//        <#code#>
-//    }
-//}
+extension MainViewController: Viewcode {
+    func configureSubViews() {
+        view.addSubview(productsTableView)
+    }
+    
+    func configureConstraints() {
+        let productsTableViewConstraints = [
+            productsTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8),
+            productsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -8),
+            productsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
+            productsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8)
+        ]
+        
+        NSLayoutConstraint.activate(productsTableViewConstraints)
+    }
+}
+
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.products.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductTableViewCell.identifier, for: indexPath) as! ProductTableViewCell
+        
+        cell.configureCell(product: viewModel.products[indexPath.row])
+        
+        return cell
+    }
+}
 

@@ -35,9 +35,10 @@ class ProductTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    private lazy var producImageView: UIImageView = {
+    private lazy var productImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         
         return imageView
     }()
@@ -54,8 +55,9 @@ class ProductTableViewCell: UITableViewCell {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = .systemFont(ofSize: 20)
+        label.font = .systemFont(ofSize: 14)
         label.adjustsFontForContentSizeCategory = true
+        label.numberOfLines = 3
         
         return label
     }()
@@ -96,6 +98,12 @@ class ProductTableViewCell: UITableViewCell {
         return stackView
     }()
     
+    private lazy var sizePickerView: UIPickerView = {
+        let pickerView = UIPickerView()
+        
+        return pickerView
+    }()
+    
     private lazy var addToCartButton: UIButton = {
         let button = UIButton()
         button.setTitle("Adicionar no carrinho", for: .normal)
@@ -109,7 +117,7 @@ class ProductTableViewCell: UITableViewCell {
     
     func configureCell(product: Product) {
         let url = URL(string: product.image)
-        imageView?.kf.setImage(with: url)
+        productImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "photo"))
         
         nameLabel.text = product.name
         newPriceLabel.text = product.actual_price
@@ -127,24 +135,31 @@ class ProductTableViewCell: UITableViewCell {
         contentView.addSubview(mainStackView)
         mainStackView.addArrangedSubview(imageStackView)
         mainStackView.addArrangedSubview(buttonStackView)
-        imageStackView.addArrangedSubview(producImageView)
+        imageStackView.addArrangedSubview(productImageView)
         imageStackView.addArrangedSubview(labelStackView)
         labelStackView.addArrangedSubview(nameLabel)
         labelStackView.addArrangedSubview(newPriceLabel)
         labelStackView.addArrangedSubview(oldPriceLabel)
         labelStackView.addArrangedSubview(discountPriceLabel)
+        //buttonStackView.addArrangedSubview(sizePickerView)
         buttonStackView.addArrangedSubview(addToCartButton)
     }
     
     func configureConstraints() {
         let mainStackViewConstraints = [
-            mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            mainStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
+            mainStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            mainStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
+            mainStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            mainStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16)
+        ]
+        
+        let productImageViewConstraints = [
+            productImageView.heightAnchor.constraint(equalToConstant: 60),
+            productImageView.widthAnchor.constraint(equalToConstant: 60),
         ]
         
         NSLayoutConstraint.activate(mainStackViewConstraints)
+        NSLayoutConstraint.activate(productImageViewConstraints)
     }
 
 }
