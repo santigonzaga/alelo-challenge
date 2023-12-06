@@ -1,9 +1,14 @@
 import UIKit
 import Kingfisher
 
+protocol ProductTableViewCellDelegate: AnyObject {
+    func addToCartButtonTapped(for cell: ProductTableViewCell)
+}
+
 class ProductTableViewCell: UITableViewCell {
     
     static let identifier = "ProductTableViewCell"
+    weak var delegate: ProductTableViewCellDelegate?
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -93,27 +98,33 @@ class ProductTableViewCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 8
+        stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         return stackView
     }()
     
-    private lazy var sizePickerView: UIPickerView = {
-        let pickerView = UIPickerView()
+    private lazy var sizeSegmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl()
         
-        return pickerView
+        return segmentedControl
     }()
     
     private lazy var addToCartButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Adicionar no carrinho", for: .normal)
+        button.setTitle("Carrinho", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .blue
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(addToCartButtonPressed), for: .touchUpInside)
         
         return button
     }()
+    
+    @objc private func addToCartButtonPressed() {
+        delegate?.addToCartButtonTapped(for: self)
+    }
     
     func configureCell(product: Product) {
         let url = URL(string: product.image)
@@ -125,6 +136,13 @@ class ProductTableViewCell: UITableViewCell {
         if product.on_sale {
             oldPriceLabel.text = product.regular_price
             discountPriceLabel.text = product.discount_percentage
+        }
+        
+        sizeSegmentedControl.removeAllSegments()
+        
+        for (index, size) in product.sizes.enumerated() {
+            sizeSegmentedControl.insertSegment(withTitle: size.size, at: index, animated: false)
+            sizeSegmentedControl.setEnabled(size.available, forSegmentAt: index)
         }
         
         configureSubViews()
@@ -141,7 +159,7 @@ class ProductTableViewCell: UITableViewCell {
         labelStackView.addArrangedSubview(newPriceLabel)
         labelStackView.addArrangedSubview(oldPriceLabel)
         labelStackView.addArrangedSubview(discountPriceLabel)
-        //buttonStackView.addArrangedSubview(sizePickerView)
+        buttonStackView.addArrangedSubview(sizeSegmentedControl)
         buttonStackView.addArrangedSubview(addToCartButton)
     }
     

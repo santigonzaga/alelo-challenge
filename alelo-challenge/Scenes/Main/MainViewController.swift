@@ -27,9 +27,7 @@ class MainViewController: UIViewController {
     private lazy var productsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(ProductTableViewCell.self, forCellReuseIdentifier: ProductTableViewCell.identifier)
-        tableView.separatorStyle = .none
-        tableView.allowsMultipleSelection = false
-        tableView.showsVerticalScrollIndicator = false
+        tableView.allowsSelection = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         return tableView
@@ -62,8 +60,17 @@ extension MainViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductTableViewCell.identifier, for: indexPath) as! ProductTableViewCell
         
         cell.configureCell(product: viewModel.products[indexPath.row])
+        cell.delegate = self
         
         return cell
+    }
+}
+
+extension MainViewController: ProductTableViewCellDelegate {
+    func addToCartButtonTapped(for cell: ProductTableViewCell) {
+        if let indexPath = productsTableView.indexPath(for: cell) {
+            viewModel.addProductToCart(product: viewModel.products[indexPath.row])
+        }
     }
 }
 
