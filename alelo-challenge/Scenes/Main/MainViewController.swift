@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
         productsTableView.dataSource = self
         
         setupUI()
+        addNavigationButtons()
     }
     
     private lazy var productsTableView: UITableView = {
@@ -32,6 +33,15 @@ class MainViewController: UIViewController {
         
         return tableView
     }()
+    
+    private func addNavigationButtons() {
+        let cartImage = UIImage(systemName: "cart")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: cartImage, style: .plain, target: self, action: #selector(goToCart))
+    }
+    
+    @objc func goToCart() {
+        coordinator?.goToCart(cart: viewModel.cart)
+    }
 }
 
 extension MainViewController: Viewcode {

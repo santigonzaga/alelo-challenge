@@ -2,6 +2,7 @@ import Foundation
 
 protocol MainViewModelProtocol {
     var products: [Product] { get set }
+    var cart: [CartItem] { get set }
     
     func loadData()
     func addProductToCart(product: Product)
@@ -35,8 +36,6 @@ class MainViewModel: MainViewModelProtocol {
                                     price: product.actual_price.convertToDouble())
             cart.append(cartItem)
         }
-        
-        print(cart)
     }
     
     private func indexOfProduct(product: Product) -> Int? {

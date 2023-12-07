@@ -2,6 +2,7 @@
 
 class MainViewModelMock: MainViewModelProtocol {
     var products: [alelo_challenge.Product] = []
+    var cart: [alelo_challenge.CartItem] = []
     
     init() {
         products = [product1, product2, product3]
@@ -12,25 +13,25 @@ class MainViewModelMock: MainViewModelProtocol {
     func addProductToCart(product: alelo_challenge.Product) {}
     
     let product1 = Product(
-                name: "VESTIDO TRANSPASSE BOW",
-                style: "20002605",
-                code_color: "20002605_613",
-                color_slug: "tapecaria",
-                color: "TAPEÇARIA",
-                on_sale: false,
-                regular_price: "R$ 199,90",
-                actual_price: "R$ 199,90",
-                discount_percentage: "",
-                installments: "3x R$ 66,63",
-                image: "https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912",
-                sizes: [
-                    Size(available: false, size: "PP", sku: "5807_343_0_PP"),
-                    Size(available: true, size: "P", sku: "5807_343_0_P"),
-                    Size(available: true, size: "M", sku: "5807_343_0_M"),
-                    Size(available: true, size: "G", sku: "5807_343_0_G"),
-                    Size(available: false, size: "GG", sku: "5807_343_0_GG")
-                ]
-            )
+        name: "VESTIDO TRANSPASSE BOW",
+        style: "20002605",
+        code_color: "20002605_613",
+        color_slug: "tapecaria",
+        color: "TAPEÇARIA",
+        on_sale: false,
+        regular_price: "R$ 199,90",
+        actual_price: "R$ 199,90",
+        discount_percentage: "",
+        installments: "3x R$ 66,63",
+        image: "https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912",
+        sizes: [
+            Size(available: false, size: "PP", sku: "5807_343_0_PP"),
+            Size(available: true, size: "P", sku: "5807_343_0_P"),
+            Size(available: true, size: "M", sku: "5807_343_0_M"),
+            Size(available: true, size: "G", sku: "5807_343_0_G"),
+            Size(available: false, size: "GG", sku: "5807_343_0_GG")
+        ]
+    )
 
     let product2 = Product(
         name: "REGATA ALCINHA FOLK",

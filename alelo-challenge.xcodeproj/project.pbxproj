@@ -26,6 +26,9 @@
 		DE0742F02B20C3620039CF68 /* alelo_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742EF2B20C3620039CF68 /* alelo_challengeUITestsLaunchTests.swift */; };
 		DE0742F82B20C3EB0039CF68 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = DE0742F72B20C3EB0039CF68 /* SnapshotTesting */; };
 		DE0742FA2B20C4B60039CF68 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = DE0742F92B20C4B60039CF68 /* InlineSnapshotTesting */; };
+		DE0742FC2B20C5A40039CF68 /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742FB2B20C5A30039CF68 /* CartItemTableViewCell.swift */; };
+		DE0742FF2B20C8060039CF68 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742FE2B20C8060039CF68 /* CartViewController.swift */; };
+		DE0743012B20C8D80039CF68 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0743002B20C8D80039CF68 /* CartViewModel.swift */; };
 		DE2923112B1A518400B1D633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923102B1A518400B1D633 /* AppDelegate.swift */; };
 		DE2923132B1A518400B1D633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923122B1A518400B1D633 /* SceneDelegate.swift */; };
 		DE2923152B1A518400B1D633 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923142B1A518400B1D633 /* MainViewController.swift */; };
@@ -67,6 +70,9 @@
 		DE0742EB2B20C3610039CF68 /* alelo-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "alelo-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0742ED2B20C3620039CF68 /* alelo_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alelo_challengeUITests.swift; sourceTree = "<group>"; };
 		DE0742EF2B20C3620039CF68 /* alelo_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alelo_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DE0742FB2B20C5A30039CF68 /* CartItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTableViewCell.swift; sourceTree = "<group>"; };
+		DE0742FE2B20C8060039CF68 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		DE0743002B20C8D80039CF68 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		DE29230D2B1A518400B1D633 /* alelo-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alelo-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2923102B1A518400B1D633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE2923122B1A518400B1D633 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 		DE0742C32B1F59C70039CF68 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				DE0742FD2B20C7F40039CF68 /* Cart */,
 				DE0742C42B1F5A720039CF68 /* Main */,
 			);
 			path = Scenes;
@@ -152,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0742D22B20212F0039CF68 /* ProductTableViewCell.swift */,
+				DE0742FB2B20C5A30039CF68 /* CartItemTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +195,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE0742FD2B20C7F40039CF68 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				DE0742FE2B20C8060039CF68 /* CartViewController.swift */,
+				DE0743002B20C8D80039CF68 /* CartViewModel.swift */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 		DE2923042B1A518400B1D633 = {
@@ -406,11 +423,14 @@
 			files = (
 				DE0742DB2B20B93D0039CF68 /* StringExtensions.swift in Sources */,
 				DE2923152B1A518400B1D633 /* MainViewController.swift in Sources */,
+				DE0742FF2B20C8060039CF68 /* CartViewController.swift in Sources */,
 				DE0742CB2B1F5E1D0039CF68 /* Product.swift in Sources */,
 				DE0742D82B20B5FD0039CF68 /* CartItem.swift in Sources */,
 				DE0742C62B1F5A9D0039CF68 /* MainCoordinator.swift in Sources */,
+				DE0743012B20C8D80039CF68 /* CartViewModel.swift in Sources */,
 				DE2923112B1A518400B1D633 /* AppDelegate.swift in Sources */,
 				DE0742C22B1F58D20039CF68 /* Coordinator.swift in Sources */,
+				DE0742FC2B20C5A40039CF68 /* CartItemTableViewCell.swift in Sources */,
 				DE0742D02B1F8E0F0039CF68 /* MainViewModel.swift in Sources */,
 				DE2923132B1A518400B1D633 /* SceneDelegate.swift in Sources */,
 				DE0742D32B20212F0039CF68 /* ProductTableViewCell.swift in Sources */,
