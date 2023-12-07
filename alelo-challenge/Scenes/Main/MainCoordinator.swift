@@ -3,21 +3,36 @@ import UIKit
 class MainCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
+    let viewControllerFactory: ViewControllerFactory
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController,
+         viewControllerFactory: ViewControllerFactory = DefaultViewControllerFactory()) {
         self.navigationController = navigationController
+        self.viewControllerFactory = viewControllerFactory
     }
 
     func start() {
-        let vc = MainViewController(viewModel: MainViewModel(loadService: JsonService()))
+        let vc = viewControllerFactory.makeMainViewController()
         vc.coordinator = self
-        navigationController.pushViewController(vc, animated: false)
+        pushViewController(vc, animated: false)
     }
     
     func goToCart(cart: [CartItem]) {
-        let vc = CartViewController(viewModel: CartViewModel(cart: cart))
+        let vc = viewControllerFactory.makeCartViewController(cart: cart)
         vc.coordinator = self
-        let navigationController = UINavigationController(rootViewController: vc)
-        self.navigationController.present(navigationController, animated: true, completion: nil)
+        presentViewController(vc, animated: true)
+    }
+    
+    func dismissCart() {
+        navigationController.dismiss(animated: true, completion: nil)
+    }
+    
+    private func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        navigationController.pushViewController(viewController, animated: animated)
+    }
+
+    private func presentViewController(_ viewController: UIViewController, animated: Bool) {
+        let navigationController = UINavigationController(rootViewController: viewController)
+        self.navigationController.present(navigationController, animated: animated, completion: nil)
     }
 }

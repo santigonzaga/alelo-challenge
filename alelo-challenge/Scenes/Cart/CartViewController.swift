@@ -20,6 +20,7 @@ class CartViewController: UIViewController {
         cartTableView.dataSource = self
         
         setupUI()
+        addNavigationButtons()
         priceLabel.text = viewModel.cart.calculateTotalPrice()
         view.backgroundColor = .white
     }
@@ -41,6 +42,15 @@ class CartViewController: UIViewController {
         
         return tableView
     }()
+    
+    private func addNavigationButtons() {
+        let close = UIImage(systemName: "xmark")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: close, style: .done, target: self, action: #selector(dismissCart))
+    }
+    
+    @objc func dismissCart() {
+        coordinator?.dismissCart()
+    }
 }
 
 extension CartViewController: Viewcode {

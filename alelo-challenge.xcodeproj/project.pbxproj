@@ -33,6 +33,7 @@
 		DE0743082B2256AA0039CF68 /* CartViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0743072B2256AA0039CF68 /* CartViewControllerTests.swift */; };
 		DE07430A2B2256CD0039CF68 /* CartItemDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0743092B2256CD0039CF68 /* CartItemDummy.swift */; };
 		DE07430C2B2257660039CF68 /* CartViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07430B2B2257660039CF68 /* CartViewModelMock.swift */; };
+		DE07430F2B2289240039CF68 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE07430E2B2289240039CF68 /* ViewControllerFactory.swift */; };
 		DE2923112B1A518400B1D633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923102B1A518400B1D633 /* AppDelegate.swift */; };
 		DE2923132B1A518400B1D633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923122B1A518400B1D633 /* SceneDelegate.swift */; };
 		DE2923152B1A518400B1D633 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2923142B1A518400B1D633 /* MainViewController.swift */; };
@@ -81,6 +82,7 @@
 		DE0743072B2256AA0039CF68 /* CartViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewControllerTests.swift; sourceTree = "<group>"; };
 		DE0743092B2256CD0039CF68 /* CartItemDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemDummy.swift; sourceTree = "<group>"; };
 		DE07430B2B2257660039CF68 /* CartViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModelMock.swift; sourceTree = "<group>"; };
+		DE07430E2B2289240039CF68 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		DE29230D2B1A518400B1D633 /* alelo-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "alelo-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2923102B1A518400B1D633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE2923122B1A518400B1D633 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				DE0742BF2B1F58C40039CF68 /* Viewcode.swift */,
 				DE0742C12B1F58D20039CF68 /* Coordinator.swift */,
+				DE07430E2B2289240039CF68 /* ViewControllerFactory.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				DE0742D02B1F8E0F0039CF68 /* MainViewModel.swift in Sources */,
 				DE2923132B1A518400B1D633 /* SceneDelegate.swift in Sources */,
 				DE0742D32B20212F0039CF68 /* ProductTableViewCell.swift in Sources */,
+				DE07430F2B2289240039CF68 /* ViewControllerFactory.swift in Sources */,
 				DE0742C02B1F58C40039CF68 /* Viewcode.swift in Sources */,
 				DE0742CE2B1F8C2B0039CF68 /* JsonService.swift in Sources */,
 			);
