@@ -2,6 +2,7 @@ import UIKit
 
 protocol CartItemTableViewCellDelegate: AnyObject {
     func stepperButtonTapped(for cell: CartItemTableViewCell, newValue: Int)
+    func deleteButtonTapped(for cell: CartItemTableViewCell)
 }
 
 class CartItemTableViewCell: UITableViewCell {
@@ -58,9 +59,19 @@ class CartItemTableViewCell: UITableViewCell {
         return stackView
     }()
     
+    private lazy var deleteButton: UIButton = {
+        let button = UIButton()
+        let trashIconImage = UIImage(systemName: "trash")
+        button.tintColor = .blue
+        button.setImage(trashIconImage, for: .normal)
+        button.addTarget(self, action: #selector(deleteButtonPressed), for: .touchUpInside)
+        
+        return button
+    }()
+    
     private lazy var amountStepper: UIStepper = {
         let stepper = UIStepper()
-        stepper.minimumValue = 0
+        stepper.minimumValue = 1
         stepper.maximumValue = 10
         stepper.addTarget(self, action: #selector(stepperButtonPressed), for: .valueChanged)
         
@@ -80,6 +91,10 @@ class CartItemTableViewCell: UITableViewCell {
         delegate?.stepperButtonTapped(for: self, newValue: Int(amountStepper.value))
     }
     
+    @objc func deleteButtonPressed() {
+        delegate?.deleteButtonTapped(for: self)
+    }
+    
     func configureCell(cartItem: CartItem) {
         nameLabel.text = cartItem.productName
         priceLabel.text = cartItem.totalPrice()
@@ -97,6 +112,7 @@ class CartItemTableViewCell: UITableViewCell {
         mainStackView.addArrangedSubview(amountStackView)
         amountStackView.addArrangedSubview(amountStepper)
         amountStackView.addArrangedSubview(amountLabel)
+        amountStackView.addArrangedSubview(deleteButton)
     }
     
     func configureConstraints() {

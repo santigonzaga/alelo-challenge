@@ -13,9 +13,8 @@ class CartViewModel: CartViewModelProtocol {
         self.cart = cart
     }
     
-    
     func deleteItem(index: Int) {
-        
+        cart.remove(at: index)
     }
 }
 

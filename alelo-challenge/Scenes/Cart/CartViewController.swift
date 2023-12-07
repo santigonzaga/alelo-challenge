@@ -91,6 +91,14 @@ extension CartViewController: CartItemTableViewCellDelegate {
             priceLabel.text = viewModel.cart.calculateTotalPrice()
         }
     }
+    
+    func deleteButtonTapped(for cell: CartItemTableViewCell) {
+        if let indexPath = cartTableView.indexPath(for: cell) {
+            viewModel.deleteItem(index: indexPath.row)
+            priceLabel.text = viewModel.cart.calculateTotalPrice()
+            cartTableView.reloadData()
+        }
+    }
 }
 
 
