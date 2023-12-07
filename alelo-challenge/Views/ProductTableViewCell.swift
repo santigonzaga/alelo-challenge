@@ -122,11 +122,13 @@ class ProductTableViewCell: UITableViewCell {
         productImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "photo"))
         
         nameLabel.text = product.name
-        newPriceLabel.text = product.actual_price
 
         if product.on_sale {
             newPriceLabel.text = "\(product.actual_price) (era \(product.regular_price))"
             discountPriceLabel.text = product.discount_percentage
+        } else {
+            newPriceLabel.text = "\(product.actual_price)"
+            discountPriceLabel.text = ""
         }
         
         sizeSegmentedControl.removeAllSegments()

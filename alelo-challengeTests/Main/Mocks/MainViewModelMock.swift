@@ -1,16 +1,19 @@
 @testable import alelo_challenge
 
 class MainViewModelMock: MainViewModelProtocol {
-    var products: [alelo_challenge.Product] = []
+    var isFiltered: Bool = false
+    var filteredProducts: [alelo_challenge.Product] = []
     var cart: [alelo_challenge.CartItem] = []
     
     init() {
-        products = [product1, product2, product3]
+        filteredProducts = [product1, product2, product3]
     }
     
     func loadData() {}
     
     func addProductToCart(product: alelo_challenge.Product) {}
+    
+    func filterSaleProducts() {}
     
     let product1 = Product(
         name: "VESTIDO TRANSPASSE BOW",

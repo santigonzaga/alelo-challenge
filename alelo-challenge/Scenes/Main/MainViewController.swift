@@ -36,11 +36,29 @@ class MainViewController: UIViewController {
     
     private func addNavigationButtons() {
         let cartImage = UIImage(systemName: "cart")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: cartImage, style: .plain, target: self, action: #selector(goToCart))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: cartImage,
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(goToCart))
+        
+        let percentImage = UIImage(systemName: "percent")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: percentImage,
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: #selector(filterSaleProducts))
     }
     
     @objc func goToCart() {
         coordinator?.goToCart(cart: viewModel.cart)
+    }
+    
+    @objc func filterSaleProducts() {
+        viewModel.filterSaleProducts()
+        productsTableView.reloadData()
+        
+        let percentImageName = viewModel.isFiltered ? "arrow.uturn.backward" : "percent"
+        let percentImage = UIImage(systemName: percentImageName)
+        navigationItem.leftBarButtonItem?.image = percentImage
     }
 }
 
@@ -63,13 +81,13 @@ extension MainViewController: Viewcode {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.products.count
+        return viewModel.filteredProducts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductTableViewCell.identifier, for: indexPath) as! ProductTableViewCell
         
-        cell.configureCell(product: viewModel.products[indexPath.row])
+        cell.configureCell(product: viewModel.filteredProducts[indexPath.row])
         cell.delegate = self
         
         return cell
@@ -79,7 +97,7 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: ProductTableViewCellDelegate {
     func addToCartButtonTapped(for cell: ProductTableViewCell) {
         if let indexPath = productsTableView.indexPath(for: cell) {
-            viewModel.addProductToCart(product: viewModel.products[indexPath.row])
+            viewModel.addProductToCart(product: viewModel.filteredProducts[indexPath.row])
         }
     }
 }

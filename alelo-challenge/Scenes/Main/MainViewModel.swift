@@ -1,17 +1,21 @@
 import Foundation
 
 protocol MainViewModelProtocol {
-    var products: [Product] { get set }
+    var filteredProducts: [Product] { get set }
     var cart: [CartItem] { get set }
+    var isFiltered: Bool { get set }
     
     func loadData()
     func addProductToCart(product: Product)
+    func filterSaleProducts()
 }
 
 class MainViewModel: MainViewModelProtocol {
-    var products: [Product] = []
+    private var products: [Product] = []
+    var filteredProducts: [Product] = []
     var cart: [CartItem] = []
     var error: Error? = nil
+    var isFiltered: Bool = false
     
     let loadService: LoadProductsProtocol
     
@@ -22,6 +26,7 @@ class MainViewModel: MainViewModelProtocol {
     func loadData() {
         do {
             products = try loadService.load()
+            filteredProducts = products
         } catch {
             self.error = error
         }
@@ -35,6 +40,16 @@ class MainViewModel: MainViewModelProtocol {
                                     amount: 1,
                                     price: product.actual_price.convertToDouble())
             cart.append(cartItem)
+        }
+    }
+    
+    func filterSaleProducts() {
+        isFiltered.toggle()
+        
+        if isFiltered {
+            filteredProducts = products.filter { $0.on_sale }
+        } else {
+            filteredProducts = products
         }
     }
     
