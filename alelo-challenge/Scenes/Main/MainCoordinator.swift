@@ -17,9 +17,10 @@ class MainCoordinator: Coordinator {
         pushViewController(vc, animated: false)
     }
     
-    func goToCart(cart: [CartItem]) {
+    func goToCart(cart: [CartItem], actualViewController: CartViewControllerDelegate) {
         let vc = viewControllerFactory.makeCartViewController(cart: cart)
         vc.coordinator = self
+        vc.delegate = actualViewController
         presentViewController(vc, animated: true)
     }
     

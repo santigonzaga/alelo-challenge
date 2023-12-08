@@ -1,8 +1,13 @@
 import UIKit
 
+protocol CartViewControllerDelegate: AnyObject {
+    func cartDidChange(cart: [CartItem])
+}
+
 class CartViewController: UIViewController {
     
     weak var coordinator: MainCoordinator?
+    weak var delegate: CartViewControllerDelegate?
     private var viewModel: CartViewModelProtocol
     
     init(viewModel: CartViewModelProtocol) {
@@ -99,6 +104,7 @@ extension CartViewController: CartItemTableViewCellDelegate {
             viewModel.cart[indexPath.row].amount = newValue
             cartTableView.reloadRows(at: [indexPath], with: .automatic)
             priceLabel.text = viewModel.cart.calculateTotalPrice()
+            delegate?.cartDidChange(cart: viewModel.cart)
         }
     }
     
@@ -107,6 +113,7 @@ extension CartViewController: CartItemTableViewCellDelegate {
             viewModel.deleteItem(index: indexPath.row)
             priceLabel.text = viewModel.cart.calculateTotalPrice()
             cartTableView.reloadData()
+            delegate?.cartDidChange(cart: viewModel.cart)
         }
     }
 }

@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
     }
     
     @objc func goToCart() {
-        coordinator?.goToCart(cart: viewModel.cart)
+        coordinator?.goToCart(cart: viewModel.cart, actualViewController: self)
     }
     
     @objc func filterSaleProducts() {
@@ -99,6 +99,13 @@ extension MainViewController: ProductTableViewCellDelegate {
         if let indexPath = productsTableView.indexPath(for: cell) {
             viewModel.addProductToCart(product: viewModel.filteredProducts[indexPath.row])
         }
+    }
+}
+
+extension MainViewController: CartViewControllerDelegate {
+    func cartDidChange(cart: [CartItem]) {
+        viewModel.cart = cart
+        productsTableView.reloadData()
     }
 }
 
