@@ -22,8 +22,6 @@
 		DE0742E02B20BC670039CF68 /* JsonServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742DF2B20BC670039CF68 /* JsonServiceMock.swift */; };
 		DE0742E32B20C0070039CF68 /* MainViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742E22B20C0070039CF68 /* MainViewControllerTests.swift */; };
 		DE0742E62B20C0950039CF68 /* MainViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742E52B20C0950039CF68 /* MainViewModelMock.swift */; };
-		DE0742EE2B20C3620039CF68 /* alelo_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742ED2B20C3620039CF68 /* alelo_challengeUITests.swift */; };
-		DE0742F02B20C3620039CF68 /* alelo_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742EF2B20C3620039CF68 /* alelo_challengeUITestsLaunchTests.swift */; };
 		DE0742F82B20C3EB0039CF68 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = DE0742F72B20C3EB0039CF68 /* SnapshotTesting */; };
 		DE0742FA2B20C4B60039CF68 /* InlineSnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = DE0742F92B20C4B60039CF68 /* InlineSnapshotTesting */; };
 		DE0742FC2B20C5A40039CF68 /* CartItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0742FB2B20C5A30039CF68 /* CartItemTableViewCell.swift */; };
@@ -41,13 +39,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DE0742F12B20C3620039CF68 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE2923052B1A518400B1D633 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE29230C2B1A518400B1D633;
-			remoteInfo = "alelo-challenge";
-		};
 		DE2923272B1A518700B1D633 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE2923052B1A518400B1D633 /* Project object */;
@@ -72,7 +63,6 @@
 		DE0742DF2B20BC670039CF68 /* JsonServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonServiceMock.swift; sourceTree = "<group>"; };
 		DE0742E22B20C0070039CF68 /* MainViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerTests.swift; sourceTree = "<group>"; };
 		DE0742E52B20C0950039CF68 /* MainViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelMock.swift; sourceTree = "<group>"; };
-		DE0742EB2B20C3610039CF68 /* alelo-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "alelo-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE0742ED2B20C3620039CF68 /* alelo_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alelo_challengeUITests.swift; sourceTree = "<group>"; };
 		DE0742EF2B20C3620039CF68 /* alelo_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alelo_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DE0742FB2B20C5A30039CF68 /* CartItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -93,13 +83,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DE0742E82B20C3610039CF68 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DE29230A2B1A518400B1D633 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,7 +245,6 @@
 			children = (
 				DE29230D2B1A518400B1D633 /* alelo-challenge.app */,
 				DE2923262B1A518700B1D633 /* alelo-challengeTests.xctest */,
-				DE0742EB2B20C3610039CF68 /* alelo-challengeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -313,24 +295,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DE0742EA2B20C3610039CF68 /* alelo-challengeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE0742F32B20C3620039CF68 /* Build configuration list for PBXNativeTarget "alelo-challengeUITests" */;
-			buildPhases = (
-				DE0742E72B20C3610039CF68 /* Sources */,
-				DE0742E82B20C3610039CF68 /* Frameworks */,
-				DE0742E92B20C3610039CF68 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE0742F22B20C3620039CF68 /* PBXTargetDependency */,
-			);
-			name = "alelo-challengeUITests";
-			productName = "alelo-challengeUITests";
-			productReference = DE0742EB2B20C3610039CF68 /* alelo-challengeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		DE29230C2B1A518400B1D633 /* alelo-challenge */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE29233A2B1A518700B1D633 /* Build configuration list for PBXNativeTarget "alelo-challenge" */;
@@ -383,10 +347,6 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					DE0742EA2B20C3610039CF68 = {
-						CreatedOnToolsVersion = 15.0;
-						TestTargetID = DE29230C2B1A518400B1D633;
-					};
 					DE29230C2B1A518400B1D633 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -415,19 +375,11 @@
 			targets = (
 				DE29230C2B1A518400B1D633 /* alelo-challenge */,
 				DE2923252B1A518700B1D633 /* alelo-challengeTests */,
-				DE0742EA2B20C3610039CF68 /* alelo-challengeUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DE0742E92B20C3610039CF68 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DE29230B2B1A518400B1D633 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -447,15 +399,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DE0742E72B20C3610039CF68 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE0742F02B20C3620039CF68 /* alelo_challengeUITestsLaunchTests.swift in Sources */,
-				DE0742EE2B20C3620039CF68 /* alelo_challengeUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DE2923092B1A518400B1D633 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -497,11 +440,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DE0742F22B20C3620039CF68 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE29230C2B1A518400B1D633 /* alelo-challenge */;
-			targetProxy = DE0742F12B20C3620039CF68 /* PBXContainerItemProxy */;
-		};
 		DE2923282B1A518700B1D633 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DE29230C2B1A518400B1D633 /* alelo-challenge */;
@@ -510,40 +448,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		DE0742F42B20C3620039CF68 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5MVGTUBM8B;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "santiago.alelo-challengeUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "alelo-challenge";
-			};
-			name = Debug;
-		};
-		DE0742F52B20C3620039CF68 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5MVGTUBM8B;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "santiago.alelo-challengeUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "alelo-challenge";
-			};
-			name = Release;
-		};
 		DE2923382B1A518700B1D633 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -677,6 +581,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -704,6 +609,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -760,15 +666,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DE0742F32B20C3620039CF68 /* Build configuration list for PBXNativeTarget "alelo-challengeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE0742F42B20C3620039CF68 /* Debug */,
-				DE0742F52B20C3620039CF68 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DE2923082B1A518400B1D633 /* Build configuration list for PBXProject "alelo-challenge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

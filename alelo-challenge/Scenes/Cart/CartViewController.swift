@@ -6,10 +6,12 @@ protocol CartViewControllerDelegate: AnyObject {
 
 class CartViewController: UIViewController {
     
+    //MARK: - Properties
     weak var coordinator: MainCoordinator?
     weak var delegate: CartViewControllerDelegate?
     private var viewModel: CartViewModelProtocol
     
+    //MARK: - Init
     init(viewModel: CartViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -19,6 +21,7 @@ class CartViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +33,7 @@ class CartViewController: UIViewController {
         view.backgroundColor = .white
     }
     
+    //MARK: - Properties UI
     private lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -53,6 +57,7 @@ class CartViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: close, style: .done, target: self, action: #selector(dismissCart))
     }
     
+    //MARK: - Actions
     @objc func dismissCart() {
         coordinator?.dismissCart()
     }

@@ -15,6 +15,6 @@ class CartViewControllerTests: XCTestCase {
     }
     
     func test_snapshot() {
-        assertSnapshot(of: sut, as: .image, record: false)
+        assertSnapshot(of: sut, as: .image)
     }
 }

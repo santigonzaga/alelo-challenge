@@ -2,9 +2,11 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+    //MARK: - Properties
     weak var coordinator: MainCoordinator?
     private var viewModel: MainViewModelProtocol
     
+    //MARK: - Init
     init(viewModel: MainViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -14,6 +16,7 @@ class MainViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +28,7 @@ class MainViewController: UIViewController {
         addNavigationButtons()
     }
     
+    //MARK: - Properties UI
     private lazy var productsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(ProductTableViewCell.self, forCellReuseIdentifier: ProductTableViewCell.identifier)
@@ -48,6 +52,7 @@ class MainViewController: UIViewController {
                                                            action: #selector(filterSaleProducts))
     }
     
+    //MARK: - Actions
     @objc func goToCart() {
         coordinator?.goToCart(cart: viewModel.cart, actualViewController: self)
     }
